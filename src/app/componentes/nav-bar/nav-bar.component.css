@@ -1,0 +1,210 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#carrito{
+    position: relative;
+}
+.logocarrito{
+    position: absolute;
+}
+#numcarrito{
+    color: white;
+    background-color: red;
+    float: right;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    margin: 0 0 0 40px;
+}
+
+.nombreydni1{
+    
+    font-size: 128%;
+    margin-top: 20px;
+    margin-left: 3px;
+    color: white;
+}
+
+.derechos{
+    color: white;
+    
+    
+}
+header{
+    position: sticky;
+    top: 0px;
+    left: 12px;
+    background-color: white;
+    z-index: 1;
+}
+#barraDeArriba{
+    display: flex;
+    justify-content: space-around;
+}
+#barraDeArriba form{
+    display: flex;
+}
+
+#barradebusqueda{
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#logo{
+    padding: 15px;
+}
+
+.logoynombre{
+    display: flex;
+}
+
+#carrito{
+    
+    padding: 30px;
+}
+
+#titulo{
+    
+    text-align: center;
+    margin-top: 15px;
+}
+
+#divbarradebuscador{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.buscador{
+    border-radius: 20px;
+    width: 400px;
+    height: 35px;
+    text-align: center;
+}
+
+.botondebuscador{
+    border-radius: 20px;
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    
+}
+
+#barradenavegacion{
+    background-color: #047c94;
+    padding: 15px;
+    border: 0px;
+    display: flex;
+    justify-content: space-around;    
+}
+#barradenavegacion ul{
+    margin: auto;
+    list-style-type: none;
+    text-align: center;
+}
+#barradenavegacion ul li{
+    display: inline;
+    text-align: center;
+    
+}
+#barradenavegacion a{
+    color: white;
+    padding: 16px 66px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+#barradenavegacion a:hover{
+    background-color: white;
+    color: black;
+}
+/***********************************************************************************************************/
+/* FOOTER */
+.divfooter{
+    background-color: #064067;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nombreydni1{
+    font-size: 128%;
+    margin: 20px 0 0 0;
+    color: white;
+}
+
+.cajamenuinferior{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listamenu{
+    list-style: none;
+    margin-right: 45px;
+}
+.iteminf{
+    margin-bottom: 5px;
+}
+.listamenu a{
+    color: white;
+}
+.listamenu a:hover{
+    color: white;
+    background-color: #047c94;
+}
+
+.cajaredes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.redes1, .redes2{
+    display: inline-flex;
+}
+
+.facebook, .twitter, .instagram, .youtube{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.ared{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none; 
+}
+a img{
+    margin: 5px;
+}
+.derechos{
+    color: white;
+    
+}
+.boton{
+  background-color: DodgerBlue;
+  border: none;
+  color: white; 
+  padding: 9px 17px; 
+  font-size: 16px;
+  cursor: pointer; 
+  border-radius: 7px;
+  margin: 5px;
+  text-decoration: none;
+  display: inline-block;
+}
+.boton:hover {
+  background-color: RoyalBlue;
+}
