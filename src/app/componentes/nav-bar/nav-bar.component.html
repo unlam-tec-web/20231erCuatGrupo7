@@ -63,10 +63,14 @@
           </form>
         </div> 
 
-        <div id="carrito">
-          <i class="bi bi-cart"></i>
-            <span id="numcarrito" onload="comprar()"></span>
+        <div class="d-flex align-items-center">
+          <a class="btn btn-success px-3 me-2 shadow" [routerLink]="['/Login']"> Iniciar sesión</a>
+          <a class="btn btn-primary px-3 me-2 shadow" [routerLink]="['/Registrarse']"> Registrarse</a>
         </div>
+
+      <!--  CUANDO INICIE SESION DEBE APARECER EL CARRITO
+        <div id="carrito">
+        </div> -->
         
     </div>
 
