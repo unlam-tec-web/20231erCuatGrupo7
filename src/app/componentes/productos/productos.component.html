@@ -1,1 +1,12 @@
-<p>productos works!</p>
+<div class="container">
+  <div class="row row-cols-3 mt-5">
+      <div *ngFor="let i of lista" class=" col card m-2 mt-5" style="width: 18rem;">
+        <img src="assets/images/infinity-war.jpg" class="card-img-top" alt="imagen">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{i[0]}}</h5>
+          <p class="card-text">${{i[1]}}</p>
+          <a href="/Inicio" class="btn btn-outline-dark mt-auto">Añadir</a>
+        </div>
+      </div>
+    </div>
+</div>
