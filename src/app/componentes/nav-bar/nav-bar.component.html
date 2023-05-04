@@ -11,28 +11,36 @@
             </h4>
           </div>
         </div>
-        
+
         <div class="w-25">
           <form class="d-flex justify-content-center" role="search">
             <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
             <button class="btn btn-outline-success" type="submit">Buscar</button>
           </form>
-        </div> 
+        </div>
 
         <div class="d-flex align-items-center">
           <a class="btn btn-primary px-3 me-2 shadow" [routerLink]="['/Login']"> Iniciar sesión</a>
           <a class="btn btn-success px-3 me-2 shadow" [routerLink]="['/Registrarse']"> Registrarse</a>
         </div>
-
+        <div>
+          <form class="d-flex">
+            <button class="btn btn-outline-dark" type="submit" [routerLink]="['/Carrito']">
+              <i class="bi-cart-fill me-1"></i>
+              Carrito
+              <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+            </button>
+          </form>
+        </div>
       <!--  CUANDO INICIE SESION DEBE APARECER EL CARRITO Y EL BTN DE CERRAR SESION
         <div class="d-flex align-items-center">
           <a class="btn btn-danger px-3 me-2 shadow" [routerLink]="['/Logout']"> Cerrar sesión</a>
           <div>
             CARRITO
-          </div> 
+          </div>
         </div>
       -->
-        
+
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
