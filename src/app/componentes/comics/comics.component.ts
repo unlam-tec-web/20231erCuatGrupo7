@@ -1,11 +1,11 @@
 import {Component, forwardRef} from '@angular/core';
 
 @Component({
-  selector: 'app-productos',
-  templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.css']
+  selector: 'app-comics',
+  templateUrl: './comics.component.html',
+  styleUrls: ['./comics.component.css']
 })
-export class ProductosComponent {
+export class ComicsComponent {
   lista = [
     ["Infinity war ", 200],
     ["Infinity war 2", 250],
