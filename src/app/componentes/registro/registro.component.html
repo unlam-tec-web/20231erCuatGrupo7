@@ -1,26 +1,50 @@
-<div class="container">
-    <form>
-      <div class="form-group">
-        <label for="email">Correo electrónico:</label>
-        <input type="email" class="form-control" id="email" placeholder="Introduce tu correo electrónico">
-      </div>
-      <div class="form-group">
-        <label for="pwd">Contraseña:</label>
-        <input type="password" class="form-control" id="pwd" placeholder="Introduce tu contraseña">
-      </div>
-      <div class="form-group">
-        <label for="nombre">Nombre:</label>
-        <input type="text" class="form-control" id="nombre" placeholder="Introduce tu nombre">
-      </div>
-      <div class="form-group">
-        <label for="apellido">Apellido:</label>
-        <input type="text" class="form-control" id="apellido" placeholder="Introduce tu apellido">
-      </div>
-      <div class="form-group">
-        <label for="direccion">Dirección:</label>
-        <input type="text" class="form-control" id="direccion" placeholder="Introduce tu dirección">
-      </div>
-      <button type="submit" class="btn btn-primary">Registrarse</button>
-    </form>
-  </div>
+
+  <section class="vh-100 fondoFlash">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-evenly align-items-center h-100">
+        
+        <div class="" style="width: 30%;margin-top: 3%;margin-left: 8%;">
+          <div class="card shadow-2-strong shadow" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <h3 class="mb-5">Registrarse</h3>
+              <form>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Nombre"/>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Apellido"/>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Direccion 123"/>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="ejemplo@email.com"/>
+                </div>
+    
+                <div class="form-outline mb-4">
+                  <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="********"/>
+                </div>
+    
+                <button class="btn btn-primary btn-lg btn-block shadow" type="submit">Registrarse</button>
+              </form>
   
+              <hr class="my-4">
+  
+              <p class="small fw-bold mt-2 pt-1 mb-0">
+                ¿Ya tenes cuenta? 
+                <a [routerLink]="['/Login']" class="link-danger">Iniciar sesión</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="../../../assets/images/flash.png" alt="Sample image" style="width: 77%;">
+        </div>
+  
+      </div>
+    </div>
+  </section>
