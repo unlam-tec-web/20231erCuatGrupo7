@@ -1,0 +1,29 @@
+.demo-2 {
+	--color-text: #ff53ff;
+	--color-link: #3c48fa;
+	--color-link-hover: #fff;
+	--color-title: #fff;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: calc(100vh - 13rem);
+	position: relative;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.content__title {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	margin: -5.5vw 0 0 0;
+	z-index: 100;
+	font-size: 10vw;
+	color: var(--color-title);
+	line-height: 1;
+}

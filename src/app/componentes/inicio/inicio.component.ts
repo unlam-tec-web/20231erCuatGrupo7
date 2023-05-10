@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Renderer2, OnInit } from '@angular/core';
 
 @Component({
   selector: 'inicio',
@@ -6,15 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./inicio.component.css']
 })
 
-export class InicioComponent {
-/*  pais : String = "Argentina";
-  provincia : String = "Bs As";
-  numero : number = 10;
+export class InicioComponent implements OnInit {
+  constructor(private renderer: Renderer2) {}
 
-  saludar() : String{
-    return "Hola";
+  ngOnInit() {
+    this.loadScript('assets/js/noise.min.js');
+    this.loadScript('assets/js/swirl.js');
+    this.loadScript('assets/js/util.js');
   }
-  */
+
+  private loadScript(src: string) {
+    const script = this.renderer.createElement('script');
+    script.src = src;
+    this.renderer.appendChild(document.head, script);
+  }
+
 
 }
 
