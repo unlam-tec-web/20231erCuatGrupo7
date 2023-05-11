@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Renderer2, OnInit } from '@angular/core';
+//import { Renderer2, OnInit } from '@angular/core';
 
 @Component({
   selector: 'inicio',
@@ -7,13 +7,13 @@ import { Renderer2, OnInit } from '@angular/core';
   styleUrls: ['./inicio.component.css']
 })
 
-export class InicioComponent implements OnInit {
+export class InicioComponent {
+
+                       /*     implements OnInit {
   constructor(private renderer: Renderer2) {}
 
   ngOnInit() {
-    this.loadScript('assets/js/noise.min.js');
-    this.loadScript('assets/js/swirl.js');
-    this.loadScript('assets/js/util.js');
+    this.loadScript('assets/js/starwars.js');
   }
 
   private loadScript(src: string) {
@@ -21,6 +21,9 @@ export class InicioComponent implements OnInit {
     script.src = src;
     this.renderer.appendChild(document.head, script);
   }
+  */
+
+  
 
 
 }
