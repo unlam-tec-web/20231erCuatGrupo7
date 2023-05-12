@@ -10,26 +10,26 @@
               <form>
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Nombre"/>
+                  <input type="text" id="typeEmailX-2" class="form-control form-control-lg"  placeholder="Nombre" name="nombre" [(ngModel)]="nombre" />
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Apellido"/>
+                  <input type="text" id="typeEmailX-2" class="form-control form-control-lg" name="apellido" placeholder="Apellido" [(ngModel)]="apellido"/>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Direccion 123"/>
+                  <input type="text" id="typeEmailX-2" class="form-control form-control-lg" name="direccion" placeholder="Direccion 123" [(ngModel)]="direccion"/>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="ejemplo@email.com"/>
+                  <input type="email" id="typeEmailX-2" class="form-control form-control-lg" name="email" placeholder="ejemplo@email.com" [(ngModel)]="email"/>
                 </div>
     
                 <div class="form-outline mb-4">
-                  <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="********"/>
+                  <input type="password" id="typePasswordX-2" class="form-control form-control-lg" name="contrasena" placeholder="********" [(ngModel)]="contrasena"/>
                 </div>
     
-                <button class="btn btn-primary btn-lg btn-block shadow" type="submit">Registrarse</button>
+                <button class="btn btn-primary btn-lg btn-block shadow" (click)="registrarUsuario()" type="submit">Registrarse</button>
               </form>
   
               <hr class="my-4">
