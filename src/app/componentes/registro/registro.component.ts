@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-registro',
@@ -8,52 +9,37 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class RegistroComponent implements OnInit {
 
-nombre:String
-apellido:String
-direccion:String
-email:String
-contrasena:String
+  registro: FormGroup;
+  registroSubmitted=false;
 
-
-
-
-registrarUsuario(){
-  console.log('nombre:' + this.nombre,
-  'apellido: ' + this.apellido,
-  'direccion:' + this.direccion,
-  'email: ' + this.email,
-  'contrasena' + this.contrasena);
-
-}
-
-
-
-
-ngOnInit(): void {
-  throw new Error('Method not implemented.');
-}
-
-
-
-  /*emailValidator  = new RegExp(/[A-Z0-9._+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
-
-  constructor(private fb:FormBuilder) {
-  }*/
-
-/*
-registroForm = this.fb.group({
-    nombre:['',[Validators.required,Validators.minLength(3)]],
-    emailRegistro:['',[Validators.required,Validators.pattern(this.emailValidator)]],
-    passwordRegistro:['',[Validators.required]],
-  });
-
-
-  resetarFormulario(){
-    this.registroForm.clearValidators()
-    this.registroForm.reset();
+  constructor( private formBuilder: FormBuilder,protected router:Router){
+    this.registro= this.formBuilder.group({
+      nombre:["",[Validators.required]],
+      apellido:["",[Validators.required]],
+      direccion: ["",[Validators.required]],
+      email: ["",
+        [Validators.required,
+        Validators.pattern(/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/)
+        ]],
+      password: ["",[Validators.required,Validators.minLength(8)]],
+    });
   }
 
-*/
+  get fm(){
+    return this.registro.controls;
+  }
+  registrar() {
+    this.registroSubmitted=true;
+    if(!this.registro.valid){
+      return;
+    }
+    console.log("Registro exitoso");
+    console.log(this.registro.value);
+  }
+
+ngOnInit(): void {
+    throw new Error('Method not implemented. ');
+}
 
 
 }
