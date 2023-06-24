@@ -9,30 +9,28 @@ import {Producto, ProductoService} from '../../services/producto.service';
   styleUrls: ['./descripcion-producto.component.css']
 })
 export class DescripcionProductoComponent implements OnInit {
-  //getUnProducto:Producto;
-  producto:{id_prod:string};
+  //producto:{id:number};
+  productoDevuelto: Producto;
 
   constructor(private ProductoService:ProductoService,
-    private router:Router,
+    private _router:Router,
     private activateRoute:ActivatedRoute
     ){}
 
   ngOnInit(): void {
-    this.producto = {
-      id_prod:this.activateRoute.snapshot.params['producto']
-    };
-    console.log(this.producto)
+    let id=this.activateRoute.snapshot.params['id']
+    this.verDescripcionProd(id);
   }
-/*
-  verDescripcionProd(){
-    this.ProductoService.getUnProducto(this.getUnProducto.id_prod).subscribe(
+
+  verDescripcionProd(id:number){
+    this.ProductoService.getUnProducto(id).subscribe(
       res =>{
         console.log(res);
-        this.getUnProducto=<any>res;
+        this.productoDevuelto=<any>res;
       },
       err=>console.log(err)
     );
   }
-*/
+
 }
 
