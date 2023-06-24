@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row row-cols-3 mt-5">
+        <div *ngFor="let i of ListarProducto" class=" col card m-2 mt-5" style="width: 18rem;">
+            <img src="assets/images/comics/infinity-war.jpg" class="card-img-top" alt="imagen">
+            <div class="card-body text-center">
+                <h5 class="card-title">{{i.nombre}}</h5>
+                <p class="card-text">${{i.precio}}</p>
+                <div class="d-flex" style="justify-content: space-evenly">
+                    <a href="/DescripcionProducto/{{i}}" class="btn btn-outline-secondary">Ver más</a>
+                    <!--
+                        <button (click)="verDescripcion(i)" type="button" class="btn btn-danger">Descripcion</button>
+                    -->
+                    <a href="/Inicio" class="ov-btn-slide-left">Añadir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
