@@ -28,9 +28,4 @@ export class ComicsComponent implements OnInit {
       err=>console.log(err)
     );
   }
-
-  verDescripcion(producto: Producto) {
-    throw new Error('Method not implemented.');
-    }
-
 }

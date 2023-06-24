@@ -4,10 +4,9 @@
             <img src="assets/images/comics/infinity-war.jpg" class="card-img-top" alt="imagen">
             <div class="card-body text-center">
                 <h5 class="card-title">{{producto.nombre}}</h5>
-                <p class="card-text">${{producto.precio}}-{{producto.id}}</p>
+                <p class="card-text">${{producto.precio}}</p>
                 <div class="d-flex" style="justify-content: space-evenly">
-                    <a href="/DescripcionProducto/{{producto}}" class="btn btn-outline-secondary">Ver más</a>
-                    <button routerLink="['/DescripcionProducto/{{producto.id}}']" type="button" class="btn btn-danger">Descripcion</button>
+                    <a [routerLink]="['/DescripcionProducto',producto.id]" class="btn btn-outline-secondary">Ver más</a>
                     <a href="/Inicio" class="ov-btn-slide-left">Añadir</a>
                 </div>
             </div>

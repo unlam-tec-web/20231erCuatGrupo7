@@ -14,7 +14,7 @@ export class ProductoService {
     return this.http.get(this.url);
   }
   //get un producto
-  getUnProducto(id:string){
+  getUnProducto(id:number){
     return this.http.get(this.url+'/'+id);
   }
   //agregar un producto
