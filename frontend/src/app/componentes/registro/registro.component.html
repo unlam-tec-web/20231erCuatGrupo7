@@ -1,0 +1,84 @@
+
+  <section class="vh-100 fondoFlash">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-evenly align-items-center h-100">
+
+        <div class="" style="width: 30%;margin-top: 3%;margin-left: 8%;">
+          <div class="card shadow-2-strong shadow" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <h3 class="mb-5">Registrarse</h3>
+              <form [formGroup]='registro' (ngSubmit)="registrar()">
+
+                <div class="form-outline mb-4">
+                  <input type="text"  class="form-control form-control-lg"  placeholder="Nombre" formControlName="nombre" />
+                  <small class="bg-danger text-light mt-1 px-2 py-1 rounded d-flex justify-content-center"
+                         *ngIf="(fm['nombre'].dirty || fm['nombre'].touched || fm['nombre'].value=='') && fm['nombre'].errors && registroSubmitted">
+                    <ng-container *ngIf="fm['nombre'].value==''">
+                      <ng-container>El nombre es requerido</ng-container>
+                    </ng-container>
+                  </small>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" class="form-control form-control-lg"  placeholder="Apellido" formControlName="apellido"/>
+                  <small class="bg-danger text-light mt-1 px-2 py-1 rounded d-flex justify-content-center"
+                         *ngIf="(fm['apellido'].dirty || fm['apellido'].touched || fm['apellido'].value=='') && fm['apellido'].errors && registroSubmitted">
+                    <ng-container *ngIf="fm['apellido'].value==''">
+                      <ng-container>El apellido es requerido</ng-container>
+                    </ng-container>
+                  </small>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" class="form-control form-control-lg" placeholder="Direccion 123" formControlName="direccion"/>
+                  <small class="bg-danger text-light mt-1 px-2 py-1 rounded d-flex justify-content-center"
+                         *ngIf="(fm['direccion'].dirty || fm['direccion'].touched || fm['direccion'].value=='') && fm['direccion'].errors && registroSubmitted">
+                    <ng-container *ngIf="fm['direccion'].value==''">
+                      <ng-container>La dirección es requerida</ng-container>
+                    </ng-container>
+                  </small>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="email" class="form-control form-control-lg" placeholder="ejemplo@email.com" formControlName="email"/>
+                  <small class="bg-danger text-light mt-1 px-2 py-1 rounded d-flex justify-content-center"
+                         *ngIf="(fm['email'].dirty || fm['email'].touched || fm['email'].value=='') && fm['email'].errors && registroSubmitted">
+                    <ng-container [ngSwitch]="fm['email'].value">
+                      <ng-container *ngSwitchCase="''">El email es requerido</ng-container>
+                      <ng-container *ngSwitchDefault>El email es invalido</ng-container>
+                    </ng-container>
+                  </small>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" class="form-control form-control-lg"placeholder="********" formControlName="password"/>
+                  <small class="bg-danger text-light mt-1 px-2 py-1 rounded d-flex justify-content-center"
+                         *ngIf="(fm['password'].dirty || fm['password'].touched || fm['password'].value=='') && fm['password'].errors && registroSubmitted">
+                    <ng-container *ngIf="fm['password'].value==''">
+                      <ng-container>La contraseña es requerida</ng-container>
+                    </ng-container>
+                    <ng-container *ngIf="fm['password'].value.length < 8 && fm['password'].value!=''">
+                      <ng-container>La contraseña debe tener más de 8 caracteres</ng-container>
+                    </ng-container>
+                  </small>
+                </div>
+
+                <button class="btn btn-primary btn-lg btn-block shadow" type="submit">Registrarse</button>
+              </form>
+
+              <hr class="my-4">
+
+              <p class="small fw-bold mt-2 pt-1 mb-0">
+                ¿Ya tenes cuenta?
+                <a [routerLink]="['/Login']" class="link-danger text-decoration-none">Iniciar sesión</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="../../../assets/images/flash.png" alt="Sample image" style="width: 77%;">
+        </div>
+
+      </div>
+    </div>
+  </section>
