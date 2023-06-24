@@ -10,7 +10,7 @@ import { ComicsComponent } from './componentes/comics/comics.component';
 const routes: Routes = [
   { path: 'Inicio', component: InicioComponent },
   { path: 'Carrito', component: CarritoComponent },
-  { path: 'DescripcionProducto', component: DescripcionProductoComponent },
+  { path: 'DescripcionProducto/:id', component: DescripcionProductoComponent },
   { path: 'Login',component: LoginComponent},
   { path: 'Registrarse',component: RegistroComponent},
   { path: 'Comics', component: ComicsComponent }
