@@ -33,7 +33,7 @@ export class ProductoService {
 }
 
 export interface Producto{
-  id_prod?:string;
+  id?:number;
   nombre?:string;
   descripcion?:string;
   clasificacion?:string;

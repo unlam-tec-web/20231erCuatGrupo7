@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import '../comics/comics.component';
-import{Router,ActivatedRoute}from '@angular/router';
+import{Router,ActivatedRoute,Params}from '@angular/router';
 import {Producto, ProductoService} from '../../services/producto.service';
 
 @Component({
@@ -9,7 +9,8 @@ import {Producto, ProductoService} from '../../services/producto.service';
   styleUrls: ['./descripcion-producto.component.css']
 })
 export class DescripcionProductoComponent implements OnInit {
-  getUnProducto:Producto;
+  //getUnProducto:Producto;
+  producto:{id_prod:string};
 
   constructor(private ProductoService:ProductoService,
     private router:Router,
@@ -17,19 +18,21 @@ export class DescripcionProductoComponent implements OnInit {
     ){}
 
   ngOnInit(): void {
-    const id_entrante=this.activateRoute.snapshot.params['id'];
-    //this.verDescripcionProd();
-    console.log('id:'+id_entrante);
+    this.producto = {
+      id_prod:this.activateRoute.snapshot.params['producto']
+    };
+    console.log(this.producto)
   }
-
+/*
   verDescripcionProd(){
     this.ProductoService.getUnProducto(this.getUnProducto.id_prod).subscribe(
       res =>{
         console.log(res);
-        //this.getProducto=<any>res;
+        this.getUnProducto=<any>res;
       },
       err=>console.log(err)
     );
   }
-
+*/
 }
+
