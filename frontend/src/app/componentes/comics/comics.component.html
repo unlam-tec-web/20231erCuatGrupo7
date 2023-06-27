@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row row-cols-3 mt-5">
         <div *ngFor="let producto of ListarProducto" class=" col card m-2 mt-5" style="width: 18rem;">
-            <img src="assets/images/comics/infinity-war.jpg" class="card-img-top" alt="imagen">
+            <img src={{producto.imagen}} class="card-img-top" alt="imagen" style="height: 400px;">
             <div class="card-body text-center">
                 <h5 class="card-title">{{producto.nombre}}</h5>
                 <p class="card-text">${{producto.precio}}</p>

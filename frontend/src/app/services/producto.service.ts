@@ -38,4 +38,5 @@ export interface Producto{
   descripcion?:string;
   clasificacion?:string;
   precio?:number;
+  imagen?:string;
 }
