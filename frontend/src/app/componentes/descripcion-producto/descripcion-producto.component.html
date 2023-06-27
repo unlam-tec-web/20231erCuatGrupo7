@@ -2,13 +2,15 @@
     <div class="container px-4 px-lg-5 my-5">
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="col-md-6">
-                <img class="card-img-top mb-5 mb-md-0" style="width: 60%;" src="../../../assets/images/comics/infinity-war.jpg " alt="..." /></div>
+                <img class="card-img-top mb-5 mb-md-0" style="width: 60%;" src={{productoDevuelto.imagen}} /></div>
             <div class="col-md-6">
                 <div class="small mb-1"></div>
-                <h1 class="display-5 fw-bolder">{{productoDevuelto.nombre}}</h1>
+                <h1 class="display-5 fw-bolder mb-5">{{productoDevuelto.nombre}}</h1>
                 <div class="fs-5 mb-5">
-                    <h5>Precio: ${{productoDevuelto.precio}}</h5>
-                    <span class="text-bold d-flex"> {{productoDevuelto.clasificacion}}</span>
+                    <h5>Precio:</h5>
+                    <p class="lead">${{productoDevuelto.precio}}</p>
+                    <h5 class="d-flex">Clasificación:</h5>
+                    <p class="lead">{{productoDevuelto.clasificacion}}</p>
                 </div>
                 <h5>Descripción:</h5>
                 <p class="lead">{{productoDevuelto.descripcion}}</p>
