@@ -1,5 +1,6 @@
 import {Component, OnInit, forwardRef} from '@angular/core';
 import {Producto, ProductoService} from '../../services/producto.service';
+import {CarritoService} from '../../services/carrito.service';
 
 @Component({
   selector: 'app-comics',
@@ -12,7 +13,7 @@ export class ComicsComponent implements OnInit {
 
   ListarProducto:Producto[];
 
-  constructor(private ProductoService:ProductoService ){}
+  constructor(private ProductoService:ProductoService,private carritoService:CarritoService ){}
 
   ngOnInit(): void {
    this.listarProductos();
@@ -22,10 +23,13 @@ export class ComicsComponent implements OnInit {
   {
     this.ProductoService.getProductos().subscribe(
       res =>{
-        console.log(res);
         this.ListarProducto=<any>res;
       },
       err=>console.log(err)
     );
+  }
+
+  agregarAlCarrito(producto:Producto){
+  this.carritoService.agregarAlCarrito(producto);
   }
 }
