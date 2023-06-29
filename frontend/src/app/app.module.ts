@@ -14,6 +14,7 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { AgregarComponent } from './componentes/agregar/agregar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {HttpClientModule} from '@angular/common/http';
     DescripcionProductoComponent,
     LoginComponent,
     RegistroComponent,
-    FooterComponent
+    FooterComponent,
+    AgregarComponent
   ],
   imports: [
     BrowserModule,

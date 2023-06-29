@@ -1,6 +1,7 @@
 import {Component, OnInit, forwardRef} from '@angular/core';
 import {Producto, ProductoService} from '../../services/producto.service';
 import {CarritoService} from '../../services/carrito.service';
+import {AgregarComponent} from '../agregar/agregar.component';
 
 @Component({
   selector: 'app-comics',
@@ -8,8 +9,6 @@ import {CarritoService} from '../../services/carrito.service';
   styleUrls: ['./comics.component.css']
 })
 export class ComicsComponent implements OnInit {
-
-
 
   ListarProducto:Producto[];
 
@@ -32,4 +31,8 @@ export class ComicsComponent implements OnInit {
   agregarAlCarrito(producto:Producto){
   this.carritoService.agregarAlCarrito(producto);
   }
+
+  crearProducto() {
+    this.ProductoService.agregarProducto
+    }
 }
