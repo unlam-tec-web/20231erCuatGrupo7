@@ -3,13 +3,13 @@ import {Producto, ProductoService} from './producto.service';
 import {CarritoItem}from './carritoItem';
 import { BehaviorSubject } from 'rxjs';
 import swal from 'sweetalert2';
-
+import{Router}from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoService {
 
-  constructor(){
+  constructor(private router:Router){
     var productosEnCache = localStorage.getItem('carrito');
     var carritoItem: CarritoItem[]=productosEnCache ? JSON.parse(productosEnCache) : [];
     this.cart.next(carritoItem);
@@ -75,19 +75,22 @@ export class CarritoService {
   }
 
   pagar(){
-    localStorage.clear();
-    swal.fire({
-      title: '¿Confirma su compra?',
-      icon: 'success',
-      showCancelButton: false,
-      confirmButtonColor: '#ffc107',
-      confirmButtonText: 'Confirmar!'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        setTimeout(function(){
-          window.location.reload();
-        }, 250);
-      }
-    })
+    if(this.cart.getValue().length > 0){
+      swal.fire({
+        title: '¿Confirma su compra?',
+        icon: 'question',
+        showCancelButton: false,
+        confirmButtonColor: '#ffc107',
+        confirmButtonText: 'Confirmar!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          var compra=JSON.parse(localStorage.getItem('carrito'));
+          localStorage.setItem('compra', JSON.stringify(compra));
+          console.log(JSON.parse(localStorage.getItem('compra')));
+          localStorage.removeItem('carrito');
+          this.router.navigate(['Inicio'])
+        }
+      })
+    }
   }
 }
