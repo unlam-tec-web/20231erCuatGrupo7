@@ -3,13 +3,13 @@ import {Producto, ProductoService} from './producto.service';
 import {CarritoItem}from './carritoItem';
 import { BehaviorSubject } from 'rxjs';
 import swal from 'sweetalert2';
-import{Router}from '@angular/router';
+
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoService {
 
-  constructor(private router:Router){
+  constructor(){
     var productosEnCache = localStorage.getItem('carrito');
     var carritoItem: CarritoItem[]=productosEnCache ? JSON.parse(productosEnCache) : [];
     this.cart.next(carritoItem);
@@ -88,7 +88,9 @@ export class CarritoService {
           localStorage.setItem('compra', JSON.stringify(compra));
           console.log(JSON.parse(localStorage.getItem('compra')));
           localStorage.removeItem('carrito');
-          this.router.navigate(['Inicio'])
+          setTimeout(function(){
+            window.location.reload();
+          }, 250);
         }
       })
     }
