@@ -14,14 +14,15 @@ export const getUnProducto = async(req, res) => {
 };
 
 export const createProducto = async(req, res) => {
-    const { nombre, descripcion, clasificacion, precio } = req.body;
-    const [rows] = await pool.query('INSERT INTO productos (nombre,descripcion,clasificacion,precio) VALUES (?,?,?,?)', [nombre, descripcion, clasificacion, precio]);
+    const { nombre, descripcion, clasificacion, precio, imagen } = req.body;
+    const [rows] = await pool.query('INSERT INTO productos (nombre,descripcion,clasificacion,precio,imagen) VALUES (?,?,?,?,?)', [nombre, descripcion, clasificacion, precio, imagen]);
     res.send({
         id: rows.insertId,
         nombre,
         descripcion,
         clasificacion,
-        precio
+        precio,
+        imagen
     });
 };
 

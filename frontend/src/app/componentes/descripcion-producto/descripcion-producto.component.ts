@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import '../comics/comics.component';
 import{Router,ActivatedRoute,Params}from '@angular/router';
 import {Producto, ProductoService} from '../../services/producto.service';
+import {CarritoService} from '../../services/carrito.service';
 
 @Component({
   selector: 'app-descripcion-producto',
@@ -9,10 +10,10 @@ import {Producto, ProductoService} from '../../services/producto.service';
   styleUrls: ['./descripcion-producto.component.css']
 })
 export class DescripcionProductoComponent implements OnInit {
-  //producto:{id:number};
+
   productoDevuelto: Producto;
 
-  constructor(private ProductoService:ProductoService,
+  constructor(private ProductoService:ProductoService,private carritoService:CarritoService,
     private _router:Router,
     private activateRoute:ActivatedRoute
     ){}
@@ -25,11 +26,13 @@ export class DescripcionProductoComponent implements OnInit {
   verDescripcionProd(id:number){
     this.ProductoService.getUnProducto(id).subscribe(
       res =>{
-        console.log(res);
         this.productoDevuelto=<any>res;
       },
       err=>console.log(err)
     );
+  }
+  agregarAlCarrito(producto:Producto){
+    this.carritoService.agregarAlCarrito(producto);
   }
 
 }

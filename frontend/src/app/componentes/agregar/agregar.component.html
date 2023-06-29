@@ -1,0 +1,61 @@
+<div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-evenly align-items-center h-100">
+
+        <div class="d-flex" style="margin-top: 3%;justify-content: center;">
+            <div class="card shadow-2-strong shadow" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+                    <h3 class="mb-5">Crear Producto</h3>
+                    <form [formGroup]='crearProducto' (ngSubmit)="crearUnProducto()">
+
+                        <div class="form-outline mb-4">
+                            <input type="text" class="form-control form-control-lg" placeholder="Nombre" formControlName="nombre" />
+                            <small class="bg-danger text-light mt-1 px-2 py-1 rounded d-flex justify-content-center" *ngIf="(fm['nombre'].dirty || fm['nombre'].touched || fm['nombre'].value=='') && fm['nombre'].errors && formularioSubmitted">
+            <ng-container *ngIf="fm['nombre'].value==''">
+              <ng-container>El nombre es requerido</ng-container>
+            </ng-container>
+          </small>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" class="form-control form-control-lg" placeholder="Descripción" formControlName="descripcion" />
+                            <small class="bg-danger text-light mt-1 px-2 py-1 rounded d-flex justify-content-center" *ngIf="(fm['descripcion'].dirty || fm['descripcion'].touched || fm['descripcion'].value=='') && fm['descripcion'].errors && formularioSubmitted">
+            <ng-container *ngIf="fm['descripcion'].value==''">
+              <ng-container>La descripción es requerida</ng-container>
+            </ng-container>
+          </small>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" class="form-control form-control-lg" placeholder="Clasificación" formControlName="clasificacion" />
+                            <small class="bg-danger text-light mt-1 px-2 py-1 rounded d-flex justify-content-center" *ngIf="(fm['clasificacion'].dirty || fm['clasificacion'].touched || fm['clasificacion'].value=='') && fm['clasificacion'].errors && formularioSubmitted">
+                                <ng-container [ngSwitch]="fm['clasificacion'].value">
+                                    <ng-container *ngSwitchCase="''">La clasificación es requerida</ng-container>
+                                    <ng-container *ngSwitchDefault>La clasificación es invalida</ng-container>
+                                  </ng-container>
+          </small>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="number" class="form-control form-control-lg" placeholder="Precio" formControlName="precio" />
+                            <small class="bg-danger text-light mt-1 px-2 py-1 rounded d-flex justify-content-center" *ngIf="(fm['precio'].dirty || fm['precio'].touched || fm['precio'].value=='') && fm['precio'].errors && formularioSubmitted">
+            <ng-container *ngIf="fm['precio'].value==''">
+              <ng-container>El precio es requerido</ng-container>
+            </ng-container>
+          </small>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="text" class="form-control form-control-lg" placeholder="Imagen" formControlName="imagen" />
+                            <small class="bg-danger text-light mt-1 px-2 py-1 rounded d-flex justify-content-center" *ngIf="(fm['imagen'].dirty || fm['imagen'].touched || fm['imagen'].value=='') && fm['imagen'].errors && formularioSubmitted">
+                                <ng-container [ngSwitch]="fm['imagen'].value">
+                                    <ng-container *ngSwitchCase="''">La imagen es requerida</ng-container>
+                                    <ng-container *ngSwitchDefault>No es una url valida</ng-container>
+                                  </ng-container>
+          </small>
+                        </div>
+
+                        <button class="btn btn-primary btn-lg btn-block shadow" type="submit">Crear</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>

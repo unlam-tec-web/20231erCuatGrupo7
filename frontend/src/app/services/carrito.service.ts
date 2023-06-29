@@ -75,19 +75,24 @@ export class CarritoService {
   }
 
   pagar(){
-    localStorage.clear();
-    swal.fire({
-      title: '¿Confirma su compra?',
-      icon: 'success',
-      showCancelButton: false,
-      confirmButtonColor: '#ffc107',
-      confirmButtonText: 'Confirmar!'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        setTimeout(function(){
-          window.location.reload();
-        }, 250);
-      }
-    })
+    if(this.cart.getValue().length > 0){
+      swal.fire({
+        title: '¿Confirma su compra?',
+        icon: 'question',
+        showCancelButton: false,
+        confirmButtonColor: '#ffc107',
+        confirmButtonText: 'Confirmar!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          var compra=JSON.parse(localStorage.getItem('carrito'));
+          localStorage.setItem('compra', JSON.stringify(compra));
+          console.log(JSON.parse(localStorage.getItem('compra')));
+          localStorage.removeItem('carrito');
+          setTimeout(function(){
+            window.location.reload();
+          }, 250);
+        }
+      })
+    }
   }
 }

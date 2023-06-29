@@ -6,6 +6,7 @@ import { DescripcionProductoComponent } from './componentes/descripcion-producto
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { ComicsComponent } from './componentes/comics/comics.component';
+import {AgregarComponent} from './componentes/agregar/agregar.component';
 
 const routes: Routes = [
   { path: 'Inicio', component: InicioComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'DescripcionProducto/:id', component: DescripcionProductoComponent },
   { path: 'Login',component: LoginComponent},
   { path: 'Registrarse',component: RegistroComponent},
-  { path: 'Comics', component: ComicsComponent }
+  { path: 'Comics', component: ComicsComponent },
+  { path: 'CrearProducto', component: AgregarComponent }
 ];
 
 @NgModule({
