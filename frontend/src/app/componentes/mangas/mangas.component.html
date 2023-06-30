@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="mt-5 d-flex" style="justify-content: end;">
+        <a class="sumar" routerLink="/CrearProducto"><i class="bi bi-plus-square mt-2" style="font-size: 2rem;"></i></a>
+    </div>
+    <div class="row row-cols-3 mt-5">
+        <div *ngFor="let producto of ListarProductoManga" class=" col card m-2 mt-5" style="width: 18rem;">
+            <img src={{producto.imagen}} class="card-img-top" alt="imagen" style="height: 400px;">
+            <div class="card-body text-center">
+                <h5 class="card-title">{{producto.nombre}}</h5>
+                <p class="card-text">${{producto.precio}}</p>
+                <div class="d-flex" style="justify-content: space-evenly">
+                    <a [routerLink]="['/DescripcionProducto',producto.id]" class="btn btn-outline-secondary">Ver más</a>
+                    <a (click)="agregarAlCarrito(producto)" class="btn btn-outline-primary">Añadir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
