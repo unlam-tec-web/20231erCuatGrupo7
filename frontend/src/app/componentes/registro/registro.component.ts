@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {Router} from "@angular/router";
+import {Usuario, UsuarioService} from '../../services/usuario.service';
 
 @Component({
   selector: 'app-registro',
@@ -12,7 +13,7 @@ export class RegistroComponent implements OnInit {
   registro: FormGroup;
   registroSubmitted=false;
 
-  constructor( private formBuilder: FormBuilder,protected router:Router){
+  constructor( private formBuilder: FormBuilder,protected router:Router, private usuarioService:UsuarioService){
     this.registro= this.formBuilder.group({
       nombre:["",[Validators.required]],
       apellido:["",[Validators.required]],
@@ -33,6 +34,7 @@ export class RegistroComponent implements OnInit {
     if(!this.registro.valid){
       return;
     }
+    this.usuarioService.agregarUsuario(this.registro.value);
     console.log("Registro exitoso");
     console.log(this.registro.value);
   }

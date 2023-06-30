@@ -10,13 +10,29 @@
         <div class="card shadow-2-strong shadow" style="border-radius: 1rem;">
           <div class="card-body p-5 text-center">
             <h3 class="mb-5">Iniciar sesión</h3>
-            <form>
+            <form [formGroup]='login' (ngSubmit)="iniciarSesion()">
               <div class="form-outline mb-4">
-                <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="ejemplo@email.com"/>
+                <input type="email" class="form-control form-control-lg" placeholder="ejemplo@email.com" formControlName="email"/>
+                  <small class="bg-danger text-light mt-1 px-2 py-1 rounded d-flex justify-content-center"
+                         *ngIf="(fm['email'].dirty || fm['email'].touched || fm['email'].value=='') && fm['email'].errors && loginSubmitted">
+                    <ng-container [ngSwitch]="fm['email'].value">
+                      <ng-container *ngSwitchCase="''">El email es requerido</ng-container>
+                      <ng-container *ngSwitchDefault>El email es invalido</ng-container>
+                    </ng-container>
+                  </small>
               </div>
   
               <div class="form-outline mb-4">
-                <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="********"/>
+                <input type="password" class="form-control form-control-lg"placeholder="********" formControlName="password"/>
+                <small class="bg-danger text-light mt-1 px-2 py-1 rounded d-flex justify-content-center"
+                         *ngIf="(fm['password'].dirty || fm['password'].touched || fm['password'].value=='') && fm['password'].errors && loginSubmitted">
+                    <ng-container *ngIf="fm['password'].value==''">
+                      <ng-container>La contraseña es requerida</ng-container>
+                    </ng-container>
+                    <ng-container *ngIf="fm['password'].value.length < 8 && fm['password'].value!=''">
+                      <ng-container>La contraseña debe tener más de 8 caracteres</ng-container>
+                    </ng-container>
+                  </small>
               </div>
   
               <button class="btn btn-primary btn-lg btn-block shadow" type="submit">Iniciar sesión</button>
