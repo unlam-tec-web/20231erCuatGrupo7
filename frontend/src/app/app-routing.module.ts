@@ -11,6 +11,7 @@ import {LibrosComponent} from './componentes/libros/libros.component';
 import {MangasComponent} from './componentes/mangas/mangas.component';
 
 const routes: Routes = [
+  { path: '', component: InicioComponent },
   { path: 'Inicio', component: InicioComponent },
   { path: 'Carrito', component: CarritoComponent },
   { path: 'DescripcionProducto/:id', component: DescripcionProductoComponent },
