@@ -86,7 +86,7 @@ export class CarritoService {
         if (result.isConfirmed) {
           swal.fire({
             icon: 'success',
-            title: 'Commpra exitosa',
+            title: 'Compra exitosa',
             showConfirmButton: false,
           })
           this.realizarCompra();
