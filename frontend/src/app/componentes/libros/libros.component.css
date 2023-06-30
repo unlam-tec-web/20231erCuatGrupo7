@@ -1,0 +1,7 @@
+.sumar {
+    color: #000000;
+}
+
+.sumar:hover {
+    transform: scale(1.1);
+}

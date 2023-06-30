@@ -7,11 +7,21 @@ import{HttpClient}from '@angular/common/http';
 export class ProductoService {
 
   url='/api/productos';
+  urlComic='/api/productos/comic';
   constructor(private http:HttpClient) { }
 
   //get productos
   getProductos(){
     return this.http.get(this.url);
+  }
+  getProductosComic(){
+    return this.http.get(this.urlComic);
+  }
+  getProductosManga(){
+    return this.http.get(this.url+'/manga');
+  }
+  getProductosLibro(){
+    return this.http.get(this.url+'/libro');
   }
   //get un producto
   getUnProducto(id:number){

@@ -10,19 +10,19 @@ import {AgregarComponent} from '../agregar/agregar.component';
 })
 export class ComicsComponent implements OnInit {
 
-  ListarProducto:Producto[];
+  ListarProductoComic:Producto[];
 
   constructor(private ProductoService:ProductoService,private carritoService:CarritoService ){}
 
   ngOnInit(): void {
-   this.listarProductos();
+   this.listarProductosComic();
   }
 
-  listarProductos()
+  listarProductosComic()
   {
-    this.ProductoService.getProductos().subscribe(
+    this.ProductoService.getProductosComic().subscribe(
       res =>{
-        this.ListarProducto=<any>res;
+        this.ListarProductoComic=<any>res;
       },
       err=>console.log(err)
     );

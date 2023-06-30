@@ -7,6 +7,8 @@ import { LoginComponent } from './componentes/login/login.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { ComicsComponent } from './componentes/comics/comics.component';
 import {AgregarComponent} from './componentes/agregar/agregar.component';
+import {LibrosComponent} from './componentes/libros/libros.component';
+import {MangasComponent} from './componentes/mangas/mangas.component';
 
 const routes: Routes = [
   { path: 'Inicio', component: InicioComponent },
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'Login',component: LoginComponent},
   { path: 'Registrarse',component: RegistroComponent},
   { path: 'Comics', component: ComicsComponent },
+  { path: 'Libros', component: LibrosComponent },
+  { path: 'Mangas', component: MangasComponent },
   { path: 'CrearProducto', component: AgregarComponent }
 ];
 
