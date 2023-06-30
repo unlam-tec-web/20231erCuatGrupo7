@@ -84,15 +84,24 @@ export class CarritoService {
         confirmButtonText: 'Confirmar!'
       }).then((result) => {
         if (result.isConfirmed) {
-          var compra=JSON.parse(localStorage.getItem('carrito'));
-          localStorage.setItem('compra', JSON.stringify(compra));
-          console.log(JSON.parse(localStorage.getItem('compra')));
-          localStorage.removeItem('carrito');
-          setTimeout(function(){
-            window.location.reload();
-          }, 250);
-        }
+          swal.fire({
+            icon: 'success',
+            title: 'Commpra exitosa',
+            showConfirmButton: false,
+          })
+          this.realizarCompra();
+          }
       })
     }
+  }
+
+  realizarCompra(){
+    var compra=JSON.parse(localStorage.getItem('carrito'));
+    localStorage.setItem('compra', JSON.stringify(compra));
+    console.log(JSON.parse(localStorage.getItem('compra')));
+    localStorage.removeItem('carrito');
+    setTimeout(function(){
+      window.location.reload();
+    }, 800);
   }
 }

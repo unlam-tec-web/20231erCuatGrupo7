@@ -36,7 +36,7 @@ export class AgregarComponent  {
       return;
     }
     this.productoService.agregarProducto(this.crearProducto.value).subscribe();
-    this.router.navigate(['/Comics'])
+    this.router.navigate(['/Inicio'])
   }
 
 

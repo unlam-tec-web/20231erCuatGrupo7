@@ -1,28 +1,27 @@
-import {Component, OnInit, forwardRef} from '@angular/core';
+import { Component } from '@angular/core';
 import {Producto, ProductoService} from '../../services/producto.service';
 import {CarritoService} from '../../services/carrito.service';
-import {AgregarComponent} from '../agregar/agregar.component';
 
 @Component({
-  selector: 'app-comics',
-  templateUrl: './comics.component.html',
-  styleUrls: ['./comics.component.css']
+  selector: 'app-mangas',
+  templateUrl: './mangas.component.html',
+  styleUrls: ['./mangas.component.css']
 })
-export class ComicsComponent implements OnInit {
+export class MangasComponent {
 
-  ListarProductoComic:Producto[];
+  ListarProductoManga:Producto[];
 
   constructor(private ProductoService:ProductoService,private carritoService:CarritoService ){}
 
   ngOnInit(): void {
-   this.listarProductosComic();
+   this.listarProductosManga();
   }
 
-  listarProductosComic()
+  listarProductosManga()
   {
-    this.ProductoService.getProductosComic().subscribe(
+    this.ProductoService.getProductosManga().subscribe(
       res =>{
-        this.ListarProductoComic=<any>res;
+        this.ListarProductoManga=<any>res;
       },
       err=>console.log(err)
     );

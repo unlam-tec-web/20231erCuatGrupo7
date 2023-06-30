@@ -15,6 +15,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AgregarComponent } from './componentes/agregar/agregar.component';
+import { MangasComponent } from './componentes/mangas/mangas.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AgregarComponent } from './componentes/agregar/agregar.component';
     LoginComponent,
     RegistroComponent,
     FooterComponent,
-    AgregarComponent
+    AgregarComponent,
+    MangasComponent
   ],
   imports: [
     BrowserModule,
