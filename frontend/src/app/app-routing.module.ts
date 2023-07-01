@@ -9,6 +9,8 @@ import { ComicsComponent } from './componentes/comics/comics.component';
 import {AgregarComponent} from './componentes/agregar/agregar.component';
 import {LibrosComponent} from './componentes/libros/libros.component';
 import {MangasComponent} from './componentes/mangas/mangas.component';
+import{ SignupComponent } from './componentes/signup/signup.component';
+import{ SigninComponent } from './componentes/signin/signin.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -20,7 +22,9 @@ const routes: Routes = [
   { path: 'Comics', component: ComicsComponent },
   { path: 'Libros', component: LibrosComponent },
   { path: 'Mangas', component: MangasComponent },
-  { path: 'CrearProducto', component: AgregarComponent }
+  { path: 'CrearProducto', component: AgregarComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'signin', component: SigninComponent }
 ];
 
 @NgModule({

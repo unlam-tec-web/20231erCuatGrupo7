@@ -16,9 +16,7 @@
                         "outputPath": "dist/practica-taller2",
                         "index": "src/index.html",
                         "main": "src/main.ts",
-                        "polyfills": [
-                            "zone.js"
-                        ],
+                        "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
                         "assets": [
                             "src/favicon.ico",
@@ -48,6 +46,10 @@
                                     "maximumError": "4kb"
                                 }
                             ],
+                            "fileReplacements": [{
+                                "replace": "src/environments/environment.ts",
+                                "with": "src/environments/environment.prod.ts"
+                            }],
                             "outputHashing": "all"
                         },
                         "development": {
