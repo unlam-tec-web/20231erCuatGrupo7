@@ -16,6 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AgregarComponent } from './componentes/agregar/agregar.component';
 import { MangasComponent } from './componentes/mangas/mangas.component';
+import { SignupComponent } from './componentes/signup/signup.component';
+import { SigninComponent } from './componentes/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { MangasComponent } from './componentes/mangas/mangas.component';
     RegistroComponent,
     FooterComponent,
     AgregarComponent,
-    MangasComponent
+    MangasComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
